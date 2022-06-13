@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_repo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="6dp"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true"
+
+    app:checkedIconVisible="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/iv_bookmark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/book_mark"
+            android:src="@drawable/ic_book"
+            app:layout_constraintBottom_toTopOf="@id/tv_description"
+            app:layout_constraintEnd_toStartOf="@+id/tv_owner_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/text_color_other" />
+
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginTop="12dp"
+
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_star"
+            app:layout_constraintStart_toEndOf="@id/tv_language"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            app:tint="@color/text_color_other" />
+
+        <ImageView
+            android:id="@+id/iv_fork"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_fork"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_fork"
+            app:layout_constraintStart_toEndOf="@id/tv_star"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            app:tint="@color/text_color_other" />
+
+        <TextView
+            android:id="@+id/tv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/text_color_other"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_fork"
+            app:layout_constraintStart_toEndOf="@id/iv_star"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            tools:text="12545" />
+
+        <TextView
+            android:id="@+id/tv_fork"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/text_color_other"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_fork"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            tools:text="12545" />
+
+        <TextView
+            android:id="@+id/tv_repo_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/user_name_color"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_bookmark"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_owner_name"
+            app:layout_constraintTop_toTopOf="@id/iv_bookmark"
+            tools:text="pa_shetty" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:textColor="@color/text_color_other"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toTopOf="@+id/iv_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bookmark"
+            tools:text="DALL·E Mini - Generate images from a text prompt" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/text_color_other"
+
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_language"
+            app:layout_constraintEnd_toStartOf="@id/iv_star"
+            app:layout_constraintStart_toEndOf="@id/iv_language"
+            app:layout_constraintTop_toTopOf="@id/iv_language"
+            tools:text="Python" />
+
+        <TextView
+            android:id="@+id/tv_owner_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/user_name_color"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="@id/iv_bookmark"
+            app:layout_constraintEnd_toStartOf="@+id/tv_repo_name"
+            app:layout_constraintStart_toEndOf="@+id/iv_bookmark"
+            app:layout_constraintTop_toTopOf="@id/iv_bookmark"
+            tools:text="borisdayma / " />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/iv_language"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/purple_200"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_language"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            app:strokeWidth="0.5dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
