@@ -18,11 +18,6 @@ import javax.inject.Inject
 class MainActivityViewModel @Inject constructor(
     private val githubRepository: GithubRepository,
 ) : ViewModel() {
-    init {
-        getTrendingList()
-    }
-
-
     private var _trendingReposList: ArrayList<TrendingListItem> = ArrayList()
     private val _trendingReposListTemp = MutableStateFlow(ArrayList<TrendingListItem>())
     var trendingReposListTemp: StateFlow<ArrayList<TrendingListItem>> = _trendingReposListTemp
@@ -30,6 +25,10 @@ class MainActivityViewModel @Inject constructor(
     val error: SharedFlow<String> = _error
     var isLoading: MutableStateFlow<Boolean> = MutableStateFlow(false)
     var searchString = ""
+
+    init {
+        getTrendingList()
+    }
 
     fun getTrendingList() {
         viewModelScope.launch(Dispatchers.IO) {
